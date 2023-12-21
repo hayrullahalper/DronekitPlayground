@@ -1,5 +1,5 @@
 import time
-from dronekit import Vehicle
+from dronekit import Vehicle, VehicleMode
 
 
 def takeoff(vehicle, altitude):
@@ -8,8 +8,11 @@ def takeoff(vehicle, altitude):
 		return
 	
 	print("Arming motors")
-	vehicle.armed = True
-	time.sleep(1)
+	
+	if vehicle.is_armable:
+		vehicle.mode = VehicleMode("GUIDED")
+		vehicle.armed = True
+		time.sleep(1)
 	
 	print(f"Taking off to {altitude} meters")
 	vehicle.simple_takeoff(altitude)
