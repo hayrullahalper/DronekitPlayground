@@ -4,7 +4,7 @@ from dronekit import Vehicle, VehicleMode
 
 def land(vehicle):
 	if vehicle is None:
-		print("Drone bağlı değil!")
+		print("Couldn't find the vehicle")
 		return
 	
 	print("Landing")
