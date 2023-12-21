@@ -1,1 +1,1 @@
-# DronekitPlayground
+# Playground for dronkit-python library
